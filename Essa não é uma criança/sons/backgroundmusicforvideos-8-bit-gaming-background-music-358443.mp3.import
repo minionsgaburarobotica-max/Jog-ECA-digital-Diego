@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/backgroundmusicforvideos-8-bit-gaming-background-music-358443.mp3-5575254d165571b34efa36d5bb235880.mp3str"
+
+[deps]
+
+source_file="res://sons/backgroundmusicforvideos-8-bit-gaming-background-music-358443.mp3"
+dest_files=[ "res://.import/backgroundmusicforvideos-8-bit-gaming-background-music-358443.mp3-5575254d165571b34efa36d5bb235880.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

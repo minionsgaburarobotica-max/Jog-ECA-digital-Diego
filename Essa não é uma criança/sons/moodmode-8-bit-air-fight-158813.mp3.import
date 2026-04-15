@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/moodmode-8-bit-air-fight-158813.mp3-d37cddfe8365c0e972f700762c4c75a7.mp3str"
+
+[deps]
+
+source_file="res://sons/moodmode-8-bit-air-fight-158813.mp3"
+dest_files=[ "res://.import/moodmode-8-bit-air-fight-158813.mp3-d37cddfe8365c0e972f700762c4c75a7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

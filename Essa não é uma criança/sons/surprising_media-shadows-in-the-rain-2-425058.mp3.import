@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/surprising_media-shadows-in-the-rain-2-425058.mp3-00578e51686a115ed0a959b8dfd19cc5.mp3str"
+
+[deps]
+
+source_file="res://sons/surprising_media-shadows-in-the-rain-2-425058.mp3"
+dest_files=[ "res://.import/surprising_media-shadows-in-the-rain-2-425058.mp3-00578e51686a115ed0a959b8dfd19cc5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

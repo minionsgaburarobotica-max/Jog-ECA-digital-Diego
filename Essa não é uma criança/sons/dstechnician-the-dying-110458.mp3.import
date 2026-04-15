@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dstechnician-the-dying-110458.mp3-582604bacd3f8706361c64bfcfcc0492.mp3str"
+
+[deps]
+
+source_file="res://sons/dstechnician-the-dying-110458.mp3"
+dest_files=[ "res://.import/dstechnician-the-dying-110458.mp3-582604bacd3f8706361c64bfcfcc0492.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

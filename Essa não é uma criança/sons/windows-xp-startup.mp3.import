@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/windows-xp-startup.mp3-0a49cc5fc76c1d48f9007b78127532f1.mp3str"
+
+[deps]
+
+source_file="res://sons/windows-xp-startup.mp3"
+dest_files=[ "res://.import/windows-xp-startup.mp3-0a49cc5fc76c1d48f9007b78127532f1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
