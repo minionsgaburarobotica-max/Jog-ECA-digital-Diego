@@ -46,7 +46,7 @@ func _ready():
 	email = $tela/dados/email
 	jogo = $tela/dados/jogo
 	horario = $tela/dados/Horario
-	var endereco
+	
 	
 	idadeTipos = int(rand_range(5, 13))
 	horarioTiposF = int(rand_range(21, 24))
@@ -76,14 +76,29 @@ func _ready():
 		
 	horario.text = horario.text + ":00"
 	idade.text = str(idadeTipos)
-	var nome = nomeT.pick_random().pick_random()
+	
+	
+	var nome
+	genero.text = generoTipos.pick_random()
+	if genero.text != "femenito":
+		nome = nomeTiposF.pick_random()
+	else:
+		nome = nomeTiposM.pick_random()
+	
 	nome1.text = str(nome)
 	nome2.text = str(nome)
 	
 	email.text = str(nome) + str(int(rand_range(23, 67))) + email.text
-	genero.text = generoTipos.pick_random()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 #	pass
+
+
+func _on_botao_button_down():
+	pass 
+
+
+func _on_botaoX_button_down():
+	pass # Replace with function body.

@@ -94,7 +94,7 @@ texture = ExtResource( 9 )
 
 [node name="aceitar" type="Node2D" parent="tela/chat/enviar"]
 
-[node name="botao" type="Button" parent="tela/chat/enviar/aceitar"]
+[node name="botaoX" type="Button" parent="tela/chat/enviar/aceitar"]
 margin_left = 219.0
 margin_top = 361.0
 margin_right = 249.0
@@ -277,3 +277,6 @@ autowrap = true
 position = Vector2( 528, 350 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 1 )
+
+[connection signal="button_down" from="tela/chat/enviar/recusar/botao" to="." method="_on_botao_button_down"]
+[connection signal="button_down" from="tela/chat/enviar/aceitar/botaoX" to="." method="_on_botaoX_button_down"]
