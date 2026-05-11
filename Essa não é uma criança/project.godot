@@ -14,6 +14,10 @@ config/name="Essa Não É Uma Criança"
 run/main_scene="res://Cenas/computador.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://GLOBAL.gd"
+
 [display]
 
 window/stretch/mode="2d"

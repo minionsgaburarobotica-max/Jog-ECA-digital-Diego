@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=1]
+[ext_resource path="res://sprites/fundo azul.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Computador 1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/tela azul.png" type="Texture" id=4]
+[ext_resource path="res://Cenas/Game over.gd" type="Script" id=5]
+[ext_resource path="res://sprites/icones/Icone positivo.png" type="Texture" id=6]
+[ext_resource path="res://sprites/icones/Icone negativo.png" type="Texture" id=7]
+
+[node name="Game over" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="fundo" type="Sprite" parent="."]
+position = Vector2( 533, 289 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 2 )
+
+[node name="error" type="Sprite" parent="."]
+position = Vector2( 525.5, 248.5 )
+scale = Vector2( 5.58594, 3.98958 )
+texture = ExtResource( 4 )
+
+[node name="computador2" type="Sprite" parent="."]
+position = Vector2( 528, 350 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 473.0
+margin_top = 134.0
+margin_right = 825.0
+margin_bottom = 350.0
+custom_fonts/font = ExtResource( 1 )
+text = "Seu Servidor acaba de ser envadido e tomado, você falhou!
+"
+autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 583.0
+margin_top = 208.0
+margin_right = 935.0
+margin_bottom = 424.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ass: Aliens
+"
+autowrap = true
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 359.0
+margin_top = 282.0
+margin_right = 711.0
+margin_bottom = 498.0
+custom_fonts/font = ExtResource( 1 )
+text = "Vamos tentar novamente:
+"
+autowrap = true
+
+[node name="recusar" type="Node2D" parent="."]
+position = Vector2( 29, 0 )
+
+[node name="botao" type="Button" parent="recusar"]
+margin_left = 438.0
+margin_top = 312.0
+margin_right = 468.0
+margin_bottom = 342.0
+
+[node name="recusar" type="Sprite" parent="recusar"]
+position = Vector2( 454, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="aceitar" type="Node2D" parent="."]
+
+[node name="botaoX" type="Button" parent="aceitar"]
+margin_left = 403.0
+margin_top = 313.0
+margin_right = 433.0
+margin_bottom = 343.0
+
+[node name="aceitar" type="Sprite" parent="aceitar"]
+position = Vector2( 418, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[connection signal="button_down" from="recusar/botao" to="." method="_on_botao_button_down"]
+[connection signal="button_down" from="aceitar/botaoX" to="." method="_on_botaoX_button_down"]

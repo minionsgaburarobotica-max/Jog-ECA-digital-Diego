@@ -28,7 +28,7 @@ var jogoTiposV
 
 var horarioTiposV
 var horarioTiposF
-
+var crianca
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -60,7 +60,7 @@ func _ready():
 	
 	
 	
-	var crianca = false#[true, false].pick_random()
+	crianca = [true, false].pick_random()
 	
 	mensagem.text = mensagemTiposV[int(rand_range(2, 9))]
 	jogo.text = jogoTiposV[int(rand_range(2, 11))]
@@ -92,13 +92,24 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$seque/sequencia.text = str(Global.sequencia)
 	pass
 #	pass
 
 
 func _on_botao_button_down():
-	pass 
+	if crianca == false:
+		Global.sequencia += 1
+		get_tree().change_scene("res://Cenas/computador.tscn")
+	else:
+		get_tree().change_scene("res://Cenas/Game over.tscn")
+		
 
 
 func _on_botaoX_button_down():
-	pass # Replace with function body.
+	if crianca == true:
+		Global.sequencia += 1
+		get_tree().change_scene("res://Cenas/computador.tscn")
+	else:
+		get_tree().change_scene("res://Cenas/Game over.tscn")
+	

@@ -1,6 +1,6 @@
 extends Node2D
-var inciado = false
-var cont = 0
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,26 +8,18 @@ var cont = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$anim.play("Fade")
-	$anim2.play("Titulo")
-	$anim3.play("Jogar")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if cont >= 2.5:
-		$anim4.play("chacoalha")
-		cont = 0
-	else:
-		cont += delta
-		
-	pass
+#func _process(delta):
 #	pass
 
 
-func _on_Button_button_down():
-	$anim2.play("Fade")
-	yield($anim2, "animation_finished")
+func _on_botao_button_down():
+	get_tree().change_scene("res://Cenas/Menu.tscn")
+	
+
+
+func _on_botaoX_button_down():
 	get_tree().change_scene("res://Cenas/computador.tscn")
-	pass # Replace with function body.
