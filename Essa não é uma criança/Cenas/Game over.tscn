@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sprites/fundo azul.png" type="Texture" id=2]
@@ -7,6 +7,22 @@
 [ext_resource path="res://Cenas/Game over.gd" type="Script" id=5]
 [ext_resource path="res://sprites/icones/Icone positivo.png" type="Texture" id=6]
 [ext_resource path="res://sprites/icones/Icone negativo.png" type="Texture" id=7]
+[ext_resource path="res://New Piskel.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("flash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Game over" type="Node2D"]
 script = ExtResource( 5 )
@@ -56,6 +72,17 @@ text = "Vamos tentar novamente:
 "
 autowrap = true
 
+[node name="Label4" type="Label" parent="."]
+margin_left = 597.0
+margin_top = 336.0
+margin_right = 755.0
+margin_bottom = 552.0
+custom_fonts/font = ExtResource( 1 )
+text = "Sua Sequencia:
+"
+align = 1
+autowrap = true
+
 [node name="recusar" type="Node2D" parent="."]
 position = Vector2( 29, 0 )
 
@@ -64,11 +91,6 @@ margin_left = 438.0
 margin_top = 312.0
 margin_right = 468.0
 margin_bottom = 342.0
-
-[node name="recusar" type="Sprite" parent="recusar"]
-position = Vector2( 454, 328 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
 
 [node name="aceitar" type="Node2D" parent="."]
 
@@ -82,6 +104,40 @@ margin_bottom = 343.0
 position = Vector2( 418, 328 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
+
+[node name="recusar2" type="Sprite" parent="."]
+position = Vector2( 483, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/flash = SubResource( 1 )
+
+[node name="seque" type="Sprite" parent="."]
+position = Vector2( 970, 21 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="sequencia" type="Label" parent="seque"]
+margin_left = -140.0
+margin_top = 216.0
+margin_right = -40.0
+margin_bottom = 329.0
+custom_fonts/font = ExtResource( 1 )
+text = "67"
+
+[node name="Recorde" type="Label" parent="."]
+margin_left = 620.0
+margin_top = 381.0
+margin_right = 785.0
+margin_bottom = 494.0
+custom_colors/font_color = Color( 1, 0.866667, 0.396078, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "NEW RECORD!"
+
+[node name="flash" type="Sprite" parent="."]
+position = Vector2( 526, 292.5 )
+scale = Vector2( 33.25, 20.2188 )
+texture = ExtResource( 8 )
 
 [connection signal="button_down" from="recusar/botao" to="." method="_on_botao_button_down"]
 [connection signal="button_down" from="aceitar/botaoX" to="." method="_on_botaoX_button_down"]

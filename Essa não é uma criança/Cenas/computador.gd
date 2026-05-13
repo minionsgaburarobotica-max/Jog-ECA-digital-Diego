@@ -89,10 +89,13 @@ func _ready():
 	nome2.text = str(nome)
 	
 	email.text = str(nome) + str(int(rand_range(23, 67))) + email.text
+	$anim2.play("flash")
+	$anim.play("Iniciar")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$seque/sequencia.text = str(Global.sequencia)
+	$sequencia.text = str(Global.sequenciaMAX)
 	pass
 #	pass
 
