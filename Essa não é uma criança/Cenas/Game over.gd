@@ -9,6 +9,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$anim.play("flash")
+	$erro.play()
+	
 	if Global.sequenciaMAX < Global.sequencia:
 		Global.sequenciaMAX = Global.sequencia
 		$Recorde.visible = true
@@ -16,6 +18,8 @@ func _ready():
 		$Recorde.visible = false
 	$seque/sequencia.text = str(Global.sequencia)
 	Global.sequencia = 0
+	
+	$musica.play()
 	pass # Replace with function body.
 
 

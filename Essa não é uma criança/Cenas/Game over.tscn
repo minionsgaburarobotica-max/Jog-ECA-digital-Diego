@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sprites/fundo azul.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://sprites/icones/Icone positivo.png" type="Texture" id=6]
 [ext_resource path="res://sprites/icones/Icone negativo.png" type="Texture" id=7]
 [ext_resource path="res://New Piskel.png" type="Texture" id=8]
+[ext_resource path="res://sons/erro.mp3" type="AudioStream" id=9]
+[ext_resource path="res://sons/moodmode-8-bit-air-fight-158813.mp3" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "flash"
@@ -92,6 +94,11 @@ margin_top = 312.0
 margin_right = 468.0
 margin_bottom = 342.0
 
+[node name="recusar2" type="Sprite" parent="recusar"]
+position = Vector2( 454, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
 [node name="aceitar" type="Node2D" parent="."]
 
 [node name="botaoX" type="Button" parent="aceitar"]
@@ -104,11 +111,6 @@ margin_bottom = 343.0
 position = Vector2( 418, 328 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
-
-[node name="recusar2" type="Sprite" parent="."]
-position = Vector2( 483, 328 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/flash = SubResource( 1 )
@@ -138,6 +140,13 @@ text = "NEW RECORD!"
 position = Vector2( 526, 292.5 )
 scale = Vector2( 33.25, 20.2188 )
 texture = ExtResource( 8 )
+
+[node name="erro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+pitch_scale = 0.7
 
 [connection signal="button_down" from="recusar/botao" to="." method="_on_botao_button_down"]
 [connection signal="button_down" from="aceitar/botaoX" to="." method="_on_botaoX_button_down"]

@@ -38,6 +38,7 @@ var infos
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	Global.gamelalala = true
 	nome1 = $tela/chat/nome
 	nome2 = $tela/perfil/nome
 	mensagem = $tela/chat/mensagem/dialogo
@@ -105,6 +106,7 @@ func _on_botao_button_down():
 		Global.sequencia += 1
 		get_tree().change_scene("res://Cenas/computador.tscn")
 	else:
+		Global.gamelalala = false
 		get_tree().change_scene("res://Cenas/Game over.tscn")
 		
 
@@ -114,5 +116,6 @@ func _on_botaoX_button_down():
 		Global.sequencia += 1
 		get_tree().change_scene("res://Cenas/computador.tscn")
 	else:
+		Global.gamelalala = false
 		get_tree().change_scene("res://Cenas/Game over.tscn")
 	
