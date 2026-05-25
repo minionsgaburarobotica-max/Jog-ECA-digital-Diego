@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=1]
+[ext_resource path="res://sprites/Tela inicial windows XP.png" type="Texture" id=2]
+[ext_resource path="res://sprites/fundo azul.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Computador 1.png" type="Texture" id=4]
+[ext_resource path="res://Cenas/Tutorial.gd" type="Script" id=5]
+[ext_resource path="res://sprites/icones/Icone negativo.png" type="Texture" id=6]
+[ext_resource path="res://sprites/icones/Icone positivo.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "apagar"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "aparecer"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Fade2" type="Sprite" parent="."]
+position = Vector2( 557.5, 431 )
+scale = Vector2( 98.4688, 59.5 )
+texture = ExtResource( 3 )
+
+[node name="Windows" type="Sprite" parent="."]
+position = Vector2( 530, 261 )
+scale = Vector2( 5.7, 4.5 )
+texture = ExtResource( 2 )
+
+[node name="Computador" type="Sprite" parent="."]
+position = Vector2( 528, 350 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 4 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+anims/apagar = SubResource( 1 )
+anims/aparecer = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 399.0
+margin_top = 94.0
+margin_right = 693.0
+margin_bottom = 260.0
+custom_fonts/font = ExtResource( 1 )
+text = "SIx seven bora billxxx luta da dancixxxx, e esssas batatinhaxxxx aixxxx
+"
+align = 1
+autowrap = true
+
+[node name="recusar" type="Node2D" parent="."]
+visible = false
+position = Vector2( 116, -89 )
+
+[node name="botao" type="Button" parent="recusar"]
+margin_left = 438.0
+margin_top = 312.0
+margin_right = 468.0
+margin_bottom = 342.0
+
+[node name="recusar2" type="Sprite" parent="recusar"]
+position = Vector2( 454, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="aceitar" type="Node2D" parent="."]
+visible = false
+position = Vector2( 87, -89 )
+
+[node name="botaoX" type="Button" parent="aceitar"]
+margin_left = 403.0
+margin_top = 313.0
+margin_right = 433.0
+margin_bottom = 343.0
+
+[node name="aceitar" type="Sprite" parent="aceitar"]
+position = Vector2( 418, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[connection signal="button_down" from="recusar/botao" to="." method="_on_botao_button_down"]
+[connection signal="button_down" from="aceitar/botaoX" to="." method="_on_botaoX_button_down"]

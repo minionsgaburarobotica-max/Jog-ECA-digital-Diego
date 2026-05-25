@@ -2,6 +2,7 @@ extends Node
 var sequenciaMAX = 0
 var sequencia = 0
 var gamelalala = false
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,9 +15,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if gamelalala == true:
-		if $musica.playing == false:
-			$musica.playing = true
-	else:
-		$musica.playing = false
+	pass
 #	pass

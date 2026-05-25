@@ -13,7 +13,9 @@ func _ready():
 	$anim2.play("Titulo")
 	$anim3.play("Jogar")
 	$window.play()
-	$musica.play()
+	if Global.get_node("musica2").playing == false:
+		Global.get_node("musica2").play()
+	
 	pass # Replace with function body.
 
 
@@ -32,6 +34,7 @@ func _process(delta):
 func _on_Button_button_down():
 	$anim2.play("Fade")
 	yield($anim2, "animation_finished")
+	Global.get_node("musica2").stop()
 	get_tree().change_scene("res://Cenas/computador.tscn")
 	pass # Replace with function body.
 

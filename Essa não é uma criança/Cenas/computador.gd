@@ -47,8 +47,8 @@ func _ready():
 	email = $tela/dados/email
 	jogo = $tela/dados/jogo
 	horario = $tela/dados/Horario
-	
-	
+	if Global.get_node("musica").playing == false:
+		Global.get_node("musica").play()
 	idadeTipos = int(rand_range(5, 13))
 	horarioTiposF = int(rand_range(21, 24))
 	horarioTiposV = [horarioTiposF, int(rand_range(9, 17))]
@@ -106,7 +106,7 @@ func _on_botao_button_down():
 		Global.sequencia += 1
 		get_tree().change_scene("res://Cenas/computador.tscn")
 	else:
-		Global.gamelalala = false
+		Global.get_node("musica").stop()
 		get_tree().change_scene("res://Cenas/Game over.tscn")
 		
 
@@ -116,6 +116,6 @@ func _on_botaoX_button_down():
 		Global.sequencia += 1
 		get_tree().change_scene("res://Cenas/computador.tscn")
 	else:
-		Global.gamelalala = false
+		Global.get_node("musica").stop()
 		get_tree().change_scene("res://Cenas/Game over.tscn")
 	

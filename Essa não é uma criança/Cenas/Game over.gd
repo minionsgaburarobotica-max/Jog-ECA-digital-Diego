@@ -19,7 +19,8 @@ func _ready():
 	$seque/sequencia.text = str(Global.sequencia)
 	Global.sequencia = 0
 	
-	$musica.play()
+	if Global.get_node("musica3").playing == false:
+		Global.get_node("musica3").play()
 	pass # Replace with function body.
 
 
@@ -29,9 +30,11 @@ func _ready():
 
 
 func _on_botao_button_down():
+	Global.get_node("musica3").stop()
 	get_tree().change_scene("res://Cenas/Menu.tscn")
 	
 
 
 func _on_botaoX_button_down():
+	Global.get_node("musica3").stop()
 	get_tree().change_scene("res://Cenas/computador.tscn")
