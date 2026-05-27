@@ -287,6 +287,7 @@ texture = ExtResource( 7 )
 [node name="Infos" type="Node2D" parent="tela/dados"]
 
 [node name="bio" type="Label" parent="tela/dados/Infos"]
+visible = false
 margin_left = 526.25
 margin_top = 232.25
 margin_right = 791.25
@@ -353,6 +354,7 @@ text = "67:67"
 autowrap = true
 
 [node name="bio" type="Label" parent="tela/dados"]
+visible = false
 margin_left = 492.0
 margin_top = 252.0
 margin_right = 620.0
@@ -360,6 +362,22 @@ margin_bottom = 358.0
 custom_fonts/font = ExtResource( 6 )
 text = "ola me chamo bora billson e moro a 67 kilometros da china, não choraxx"
 autowrap = true
+
+[node name="Fade4" type="Sprite" parent="."]
+position = Vector2( 534, -64 )
+scale = Vector2( 20.6875, 6.043 )
+texture = ExtResource( 3 )
+
+[node name="Fade6" type="Sprite" parent="."]
+position = Vector2( 545, 558 )
+scale = Vector2( 20.6875, 6.043 )
+texture = ExtResource( 3 )
+
+[node name="Fade5" type="Sprite" parent="."]
+position = Vector2( 69, 271 )
+rotation = 1.5708
+scale = Vector2( 20.6875, 6.043 )
+texture = ExtResource( 3 )
 
 [node name="computador" type="Sprite" parent="."]
 position = Vector2( 528, 350 )

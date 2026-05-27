@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sprites/Tela inicial windows XP.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Cenas/Tutorial.gd" type="Script" id=5]
 [ext_resource path="res://sprites/icones/Icone negativo.png" type="Texture" id=6]
 [ext_resource path="res://sprites/icones/Icone positivo.png" type="Texture" id=7]
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://sprites/icones/Icone exclamaçao.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "apagar"
@@ -52,6 +54,24 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Label2:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 6
+outline_color = Color( 0.658824, 0.388235, 0, 1 )
+font_data = ExtResource( 8 )
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 5 )
@@ -87,6 +107,18 @@ text = "
 "
 align = 1
 autowrap = true
+percent_visible = 0.0
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 647.0
+margin_top = 396.0
+margin_right = 941.0
+margin_bottom = 562.0
+custom_fonts/font = ExtResource( 1 )
+text = "Pular
+"
+align = 1
+autowrap = true
 
 [node name="recusar" type="Node2D" parent="."]
 visible = false
@@ -118,6 +150,31 @@ position = Vector2( 418, 328 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
+[node name="Pular" type="Node2D" parent="."]
+position = Vector2( 433, 76 )
+
+[node name="botaoPulae" type="Button" parent="Pular"]
+margin_left = 403.0
+margin_top = 313.0
+margin_right = 433.0
+margin_bottom = 343.0
+
+[node name="aceitar" type="Sprite" parent="Pular"]
+position = Vector2( 418, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 387.0
+margin_right = 664.0
+margin_bottom = 529.0
+custom_colors/font_color = Color( 0.886275, 0.792157, 0.294118, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "TUTORIALxx"
+align = 1
+percent_visible = 0.0
+
 [node name="Fade" type="Sprite" parent="."]
 position = Vector2( 552.5, 424 )
 scale = Vector2( 60.4687, 39.875 )
@@ -125,3 +182,4 @@ texture = ExtResource( 3 )
 
 [connection signal="button_down" from="recusar/botao" to="." method="_on_botao_button_down"]
 [connection signal="button_down" from="aceitar/botaoX" to="." method="_on_botaoX_button_down"]
+[connection signal="button_down" from="Pular/botaoPulae" to="." method="_on_botaoPulae_button_down"]

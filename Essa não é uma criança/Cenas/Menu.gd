@@ -45,3 +45,9 @@ func _on_Button_button_down():
 func _on_botao_button_down():
 	get_tree().quit()
 	 # Replace with function body.
+
+
+func _on_botao2_button_down():
+	$anim2.play("Fade")
+	yield($anim2, "animation_finished")
+	get_tree().change_scene("res://Cenas/creditos.tscn")

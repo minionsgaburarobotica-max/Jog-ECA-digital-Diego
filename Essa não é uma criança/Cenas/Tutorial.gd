@@ -19,7 +19,7 @@ func proximo(text, opa):
 		$Label.text = text
 		$anim.play("aparecer")
 		yield($anim, "animation_finished")
-		yield(get_tree().create_timer(3.5), "timeout")
+		yield(get_tree().create_timer(5), "timeout")
 		$anim.play("apagar")
 		yield($anim, "animation_finished")
 		
@@ -50,3 +50,9 @@ func _on_botao_button_down():
 
 func _on_botaoX_button_down():
 	proximo("Otimo", true)
+
+
+func _on_botaoPulae_button_down():
+	Global.get_node("musica2").stop()
+	Global.tutorial = false
+	get_tree().change_scene("res://Cenas/computador.tscn")

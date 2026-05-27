@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Essa Não É Uma Criança"
-run/main_scene="res://Cenas/computador.tscn"
+run/main_scene="res://Cenas/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

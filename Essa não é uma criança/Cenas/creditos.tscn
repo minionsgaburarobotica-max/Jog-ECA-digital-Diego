@@ -1,10 +1,82 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/Tela inicial windows XP.png" type="Texture" id=1]
 [ext_resource path="res://sprites/fundo azul.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Computador 1.png" type="Texture" id=3]
+[ext_resource path="res://Cenas/creditos.gd" type="Script" id=4]
+[ext_resource path="res://sprites/icones/Icone voltar.png" type="Texture" id=5]
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 6
+outline_color = Color( 0.658824, 0.388235, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Creditos"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 421, 450 ), Vector2( 421, -600 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 421, 510 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade sumir"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="creditos" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Fade2" type="Sprite" parent="."]
 position = Vector2( 557.5, 431 )
@@ -16,7 +88,86 @@ position = Vector2( 530, 261 )
 scale = Vector2( 5.7, 4.5 )
 texture = ExtResource( 1 )
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 421, 510 )
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_right = 213.0
+margin_bottom = 465.0
+custom_fonts/font = ExtResource( 7 )
+text = "Esse jogo foi feito por: EU
+
+
+Meu nome é diego santos do carmo, tenho 12 anos e sou aluno do curso de jogos Labinec, com supervisão e ajuda do professor Gabura.
+
+
+ Moro no brasil, Região nordeste, estado do ceará, Rua Lauro vieira chaves 137, na parte de cima, estudo na escola haroldo jorge brawl vieira, 9o ano, pelo turno da tarde, 
+
+"
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="Node2D"]
+margin_left = -5.0
+margin_top = 789.0
+margin_right = 208.0
+margin_bottom = 1398.0
+custom_fonts/font = ExtResource( 7 )
+text = "Obrigado Por Jogar :D"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Node2D"]
+margin_left = -216.0
+margin_top = 668.0
+margin_right = 414.0
+margin_bottom = 810.0
+custom_colors/font_color = Color( 0.886275, 0.792157, 0.294118, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Essa Não
+é Uma
+Criança"
+align = 1
+
+[node name="Fade3" type="Sprite" parent="."]
+position = Vector2( 554, 554 )
+scale = Vector2( 20.6875, 6.043 )
+texture = ExtResource( 2 )
+
+[node name="Fade4" type="Sprite" parent="."]
+position = Vector2( 534, -64 )
+scale = Vector2( 20.6875, 6.043 )
+texture = ExtResource( 2 )
+
 [node name="Computador" type="Sprite" parent="."]
 position = Vector2( 528, 350 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
+
+[node name="voltar" type="Node2D" parent="."]
+position = Vector2( -249, -248 )
+
+[node name="botao" type="Button" parent="voltar"]
+margin_left = 438.0
+margin_top = 312.0
+margin_right = 468.0
+margin_bottom = 342.0
+
+[node name="recusar2" type="Sprite" parent="voltar"]
+position = Vector2( 454, 328 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="Fade5" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 557.5, 431 )
+scale = Vector2( 98.4688, 59.5 )
+texture = ExtResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/Creditos = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+anims/fade = SubResource( 4 )
+"anims/fade sumir" = SubResource( 5 )
+
+[connection signal="button_down" from="voltar/botao" to="." method="_on_botao_button_down"]

@@ -85,9 +85,17 @@ func _ready():
 		nome = nomeTiposF.pick_random()
 	else:
 		nome = nomeTiposM.pick_random()
+		
+#	var perfil = ["res://sprites/perfis/Perfil 67.png", ""]
+#
+#	$tela/chat/perfil
+#	$tela/chat/mensagem/perfil
+#	$tela/perfil/perfil
 	
 	nome1.text = str(nome)
 	nome2.text = str(nome)
+	
+	
 	
 	email.text = str(nome) + str(int(rand_range(23, 67))) + email.text
 	$anim2.play("flash")
