@@ -34,8 +34,11 @@ func _process(delta):
 func _on_Button_button_down():
 	$anim2.play("Fade")
 	yield($anim2, "animation_finished")
-	Global.get_node("musica2").stop()
-	get_tree().change_scene("res://Cenas/computador.tscn")
+	if Global.tutorial == false:
+		Global.get_node("musica2").stop()
+		get_tree().change_scene("res://Cenas/computador.tscn")
+	else:
+		get_tree().change_scene("res://Cenas/Tutorial.tscn")
 	pass # Replace with function body.
 
 

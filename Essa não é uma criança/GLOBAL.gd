@@ -2,7 +2,7 @@ extends Node
 var sequenciaMAX = 0
 var sequencia = 0
 var gamelalala = false
-
+var tutorial = true
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

@@ -512,7 +512,6 @@ text = "Sair
 autowrap = true
 
 [node name="Fade" type="Sprite" parent="."]
-visible = false
 position = Vector2( 552.5, 424 )
 scale = Vector2( 60.4687, 39.875 )
 texture = ExtResource( 7 )

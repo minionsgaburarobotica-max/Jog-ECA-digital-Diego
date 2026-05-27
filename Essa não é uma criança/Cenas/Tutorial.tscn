@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Cenas/textoGrande.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sprites/Tela inicial windows XP.png" type="Texture" id=2]
@@ -38,6 +38,21 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -60,6 +75,7 @@ texture = ExtResource( 4 )
 root_node = NodePath("../Label")
 anims/apagar = SubResource( 1 )
 anims/aparecer = SubResource( 2 )
+anims/fade = SubResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 399.0
@@ -67,7 +83,7 @@ margin_top = 94.0
 margin_right = 693.0
 margin_bottom = 260.0
 custom_fonts/font = ExtResource( 1 )
-text = "SIx seven bora billxxx luta da dancixxxx, e esssas batatinhaxxxx aixxxx
+text = "
 "
 align = 1
 autowrap = true
@@ -101,6 +117,11 @@ margin_bottom = 343.0
 position = Vector2( 418, 328 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
+
+[node name="Fade" type="Sprite" parent="."]
+position = Vector2( 552.5, 424 )
+scale = Vector2( 60.4687, 39.875 )
+texture = ExtResource( 3 )
 
 [connection signal="button_down" from="recusar/botao" to="." method="_on_botao_button_down"]
 [connection signal="button_down" from="aceitar/botaoX" to="." method="_on_botaoX_button_down"]

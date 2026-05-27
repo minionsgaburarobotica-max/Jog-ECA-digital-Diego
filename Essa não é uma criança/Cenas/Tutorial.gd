@@ -1,11 +1,11 @@
 extends Node2D
-var tutorial = ["oioioi", "Esse é o tutorial do jogo", "Finja que eu expliquei alguma coisa", ""]
+var tutorial = ["Ola Jogador", "Esse é o tutorial do jogo", "Para jogar esse jogo incrivel, você deve investigar o perfil das crianças", "isso é, coisas como o horario mais jogado, os jogos que ela joga, etc", "após ver todas as informações você dara seu veredito escolhendo se ela de fato é uma criança", "você trabalha como Moderador do nosso jogo Foblox, Seu trabalho é não deixar que nenhuma criança seja rejeitada, e que nenhum alien entre", ""]
 var texto = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 func pergunta():
-	$Label.text = "tu entendeu?"
+	$Label.text = "Você entendeu tudo?"
 	$anim.play("aparecer")
 	yield($anim, "animation_finished")
 	$recusar.visible = true
@@ -19,7 +19,7 @@ func proximo(text, opa):
 		$Label.text = text
 		$anim.play("aparecer")
 		yield($anim, "animation_finished")
-		yield(get_tree().create_timer(1.5), "timeout")
+		yield(get_tree().create_timer(3.5), "timeout")
 		$anim.play("apagar")
 		yield($anim, "animation_finished")
 		
@@ -29,9 +29,12 @@ func proximo(text, opa):
 			
 		else:
 			Global.get_node("musica2").stop()
+			Global.tutorial = false
 			get_tree().change_scene("res://Cenas/computador.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$anim.play("fade")
+	yield($anim, "animation_finished")
 	proximo(tutorial[texto], null)
 	pass # Replace with function body.
 
