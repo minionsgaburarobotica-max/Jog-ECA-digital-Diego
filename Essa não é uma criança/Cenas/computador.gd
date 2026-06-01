@@ -13,7 +13,7 @@ var horario
 var nomeTiposF = ["daniel", "marcos", "angelo", "enzo", "bill", "alexandre", "miguel", "danielo"]
 var nomeTiposM = ["shakira", "fernanda", "marlene", "nita", "daniele", "maria", "mariana", "izabella"]
 var nomeT = [nomeTiposF, nomeTiposM]
-var mensagemTiposF = ["oi, eu gostaria de entrar no seu servidor", "ola, sou uma criança. posso jogar em seu servidor", "oi, eu posso jogar no servidor?", "zip zip zip zeeep zop zip.", "ola zip, posso entrar no seu jogo?", "iudfhiuhisfhiihihfisfhd", "oi. eu com certeza sou um alienigena disfarçado que quer abduzir crianças dentro do jogo, posso jogar tio."]
+var mensagemTiposF = ["oi, eu gostaria de entrar no seu servidor beleza, me põe aí", "ola, sou uma criança. posso jogar em seu servidor, companheiro. ficaria agradecido", "oi, eu posso jogar no servidor? Prezado cavalheiro", "zip zip zip zeeep zop zip.", "ola zip, posso entrar no seu jogo?", "iudfhiuhisfhiihihfisfhd", "oi. eu com certeza não sou um alienigena disfarçado que quer abduzir crianças dentro do jogo, posso jogar tio.", "...", "hehe", "cedo ou tarde, iremos entrar", "esteja pronto para minha chegada"]
 var mensagemTiposV
 
 var idadeTipos
@@ -23,7 +23,7 @@ var generoTipos = ["masculito", "femenito"]
 var emailTiposF = ["@hotmail", "@outlook", "@yahoo"]
 var emailTiposV 
 
-var jogoTiposF = ["tibia", "CS1", "team fortress 2", "facebook", "instagram", "não jogo", "LoL", "mario", "elden ring", "baldurs gate"]
+var jogoTiposF = ["tibia MMO", "CS1", "team fortress 2", "facebook", "instagram", "não jogo", "LoL", "elden ring", "baldurs gate", "não lembro o nome", "xadrez", "Go", "tigrinho", "Mahjong"]
 var jogoTiposV
 
 var horarioTiposV
@@ -53,7 +53,7 @@ func _ready():
 	horarioTiposF = int(rand_range(21, 24))
 	horarioTiposV = [horarioTiposF, int(rand_range(9, 17))]
 	
-	jogoTiposV = [jogoTiposF, jogo, "roblox", "minecraft", "subway surfers", "uma musume", "fazedinha feliz", "roube um 67", "super mombo quest", "grand chase", "gacha life", "toca boca"]
+	jogoTiposV = [jogoTiposF, jogo, "roblox", "minecraft", "subway surfers", "fazedinha feliz", "roube um 67", "super mombo quest", "gacha life", "toca boca", "roube um brainrot", "jogo da dora", "Blox fruit", "luta de dança"]
 	emailTiposV = [emailTiposF, email, "@gmail"]
 	mensagemTiposV = [mensagemTiposF, mensagem, "oii posso entrar no seu servidor", "oiiiiiii posso jogar tabem", "ola. eu queria entrar. por favor", "opa eu queria entrar eu posso", "oi eu posso entrar por favor", "oii eu quero jogar tbm", "deixa eu entrar porfavor"]
 
@@ -86,11 +86,11 @@ func _ready():
 	else:
 		nome = nomeTiposM.pick_random()
 		
-#	var perfil = ["res://sprites/perfis/Perfil 67.png", ""]
+	var perfil = ["res://sprites/perfis/Perfil 67.png", "res://sprites/perfis/Perfil android.png", "res://sprites/perfis/Perfil esqueleto.png", "res://sprites/perfis/Perfil prea.png", "res://sprites/perfis/Perfil Resenha (1).png", "res://sprites/perfis/Perfil socrates.png"].pick_random()
 #
-#	$tela/chat/perfil
-#	$tela/chat/mensagem/perfil
-#	$tela/perfil/perfil
+	$tela/chat/perfil.texture = load(perfil)
+	$tela/chat/mensagem/perfil.texture = load(perfil)
+	$tela/perfil/perfil.texture = load(perfil)
 	
 	nome1.text = str(nome)
 	nome2.text = str(nome)

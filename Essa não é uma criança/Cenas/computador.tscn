@@ -265,6 +265,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 11 )
 
 [node name="janela2" type="Sprite" parent="tela/dados/janelas"]
+visible = false
 position = Vector2( 556.25, 293.25 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 12 )
